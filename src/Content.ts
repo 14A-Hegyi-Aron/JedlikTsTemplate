@@ -1,6 +1,7 @@
 ﻿import fs from "fs"; //  https://nodejs.org/docs/latest-v14.x/api/fs.html
 import http from "http"; //  https://nodejs.org/docs/latest-v14.x/api/http.html
 import url from "url"; //  https://nodejs.org/docs/latest-v14.x/api/url.html
+import Megoldás from "./megoldás";
 
 export default class Content {
     public static content(req: http.IncomingMessage, res: http.ServerResponse): void {
@@ -26,7 +27,9 @@ export default class Content {
 
         // Kezd a kódolást innen -->
 
-        res.write("Egyszerű Hello World! (2022/2023)\n");
+        const m: Megoldás = new Megoldás("utasadat.txt");
+
+        res.write(`2. feladat: ${m.felszállókSzáma} felszállás\n`);
 
         // Tetszőleges html teg-ek és attribútumok beépítése:
         res.write("<span style='color: blue;'><i>Színes és dőlt Hello World!'</i></span>\n");
