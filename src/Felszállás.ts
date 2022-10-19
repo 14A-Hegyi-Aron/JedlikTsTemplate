@@ -3,6 +3,14 @@ export default abstract class Felszállás {
     protected _idő: Date;
     protected _kártyaID: string;
 
+    public get megállóSorszáma(): number {
+        return this._megállSorszáma;
+    }
+
+    public get érvényesFelszállás(): boolean {
+        return false;
+    }
+
     constructor(sor: string) {
         const m: string[] = sor.split(" ");
         this._megállSorszáma = parseInt(m[0]);

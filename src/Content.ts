@@ -1,7 +1,7 @@
 ﻿import fs from "fs"; //  https://nodejs.org/docs/latest-v14.x/api/fs.html
 import http from "http"; //  https://nodejs.org/docs/latest-v14.x/api/http.html
 import url from "url"; //  https://nodejs.org/docs/latest-v14.x/api/url.html
-import Megoldás from "./megoldás";
+import Megoldás, { IKeres } from "./megoldás";
 
 export default class Content {
     public static content(req: http.IncomingMessage, res: http.ServerResponse): void {
@@ -28,20 +28,15 @@ export default class Content {
         // Kezd a kódolást innen -->
 
         const m: Megoldás = new Megoldás("utasadat.txt");
+        res.write(`2. feladat:\nA buszra ${m.felszállókSzáma} utas akart felszállni.\n`);
 
-        res.write(`2. feladat: ${m.felszállókSzáma} felszállás\n`);
+        res.write(`3. feladat:\nA buszra ${m.érvénytelenFelszállásokSzáma} utas nem szállhatott fel.\n`);
 
-        // Tetszőleges html teg-ek és attribútumok beépítése:
-        res.write("<span style='color: blue;'><i>Színes és dőlt Hello World!'</i></span>\n");
+        const max: IKeres = m.MaxKeresArray;
+        res.write(`4. feladat:\nA legtöbb utas (${max.maxFelszálló} fő) a ${max.maxElsőMegálló}. megállóban próbált felszállni.\n`);
 
-        // Próbáljuk számra konvertálni a "kor" paraméter (http://localhost:8080/?kor=16) értékét:
-        let korod = parseInt(params.get("kor") as string);
-        // Ha nincs "kor" paraméter megadva, vagy nem lehet számra konvertálni értékét,
-        // akkor a "korod" változóba NaN érték kerül, ilyenkor legyen 18 év az értéke:
-        if (isNaN(korod)) korod = 18;
-
-        res.write(`<label>Kérem a korod: <input type='number' name='kor' value=${korod} style='max-width:100px;' onChange='this.form.submit();'></label>\n`);
-        res.write(`Te ${korod} éves vagy!\n`);
+        const max2: IKeres = m.MaxKeresMap;
+        res.write(`4. feladat:\nA legtöbb utas (${max2.maxFelszálló} fő) a ${max2.maxElsőMegálló}. megállóban próbált felszállni.\n`);
 
         // <---- Fejezd be a kódolást
 
