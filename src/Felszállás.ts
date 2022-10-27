@@ -3,12 +3,32 @@ export default abstract class Felszállás {
     protected _idő: Date;
     protected _kártyaID: string;
 
+    public get érvényesFelszállás(): boolean {
+        return false;
+    }
+
+    public get kedvezményesUtazás(): boolean {
+        return false;
+    }
+
+    public get ingyenesUtazás(): boolean {
+        return false;
+    }
+
     public get megállóSorszáma(): number {
         return this._megállSorszáma;
     }
 
-    public get érvényesFelszállás(): boolean {
+    public get lejár3Nap(): boolean {
         return false;
+    }
+
+    public get idő(): Date {
+        return this._idő;
+    }
+
+    public get kártyaID(): string {
+        return this._kártyaID;
     }
 
     constructor(sor: string) {

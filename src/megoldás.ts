@@ -51,6 +51,24 @@ export default class Megoldás {
         return keres;
     }
 
+    public get ingyenesUtazásokSzáma(): number {
+        return this._utasadatok.filter(utas => utas.ingyenesUtazás).length;
+    }
+
+    public get kedvezményesUtazásokSzáma(): number {
+        return this._utasadatok.filter(utas => utas.kedvezményesUtazás).length;
+    }
+
+    public figyelmeztetéseketÁllománybaÍr(állomány: string): void {
+        const ki: string[] = [];
+        this._utasadatok
+            .filter(utas => utas.lejár3Nap)
+            .forEach(utas => {
+                ki.push(`${utas.kártyaID} ${utas.idő}`);
+            });
+        fs.writeFileSync(állomány, ki.join("\r"));
+    }
+
     constructor(forrás: string) {
         fs.readFileSync(forrás)
             .toString()

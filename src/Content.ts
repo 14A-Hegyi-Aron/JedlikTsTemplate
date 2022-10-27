@@ -38,6 +38,8 @@ export default class Content {
         const max2: IKeres = m.MaxKeresMap;
         res.write(`4. feladat:\nA legtöbb utas (${max2.maxFelszálló} fő) a ${max2.maxElsőMegálló}. megállóban próbált felszállni.\n`);
 
+        res.write(`5. feladat:\nIngyenes utazók száma: ${m.ingyenesUtazásokSzáma} fő\nA kedvezményes utazók száma: ${m.kedvezményesUtazásokSzáma} fő\n`);
+
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form></body></html>");
