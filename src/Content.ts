@@ -40,6 +40,8 @@ export default class Content {
 
         res.write(`5. feladat:\nIngyenes utazók száma: ${m.ingyenesUtazásokSzáma} fő\nA kedvezményes utazók száma: ${m.kedvezményesUtazásokSzáma} fő\n`);
 
+        m.figyelmeztetéseketÁllománybaÍr("figyelmeztetes.txt");
+
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form></body></html>");

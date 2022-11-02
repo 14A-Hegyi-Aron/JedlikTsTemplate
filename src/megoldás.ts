@@ -2,6 +2,7 @@ import Felszállás from "./Felszállás";
 import fs from "fs";
 import FelszállásJegy from "./FelszállásJegy";
 import FelszállásBérlet from "./FelszállásBérlet";
+import moment from "moment";
 
 export interface IKeres {
     maxFelszálló: number;
@@ -62,11 +63,11 @@ export default class Megoldás {
     public figyelmeztetéseketÁllománybaÍr(állomány: string): void {
         const ki: string[] = [];
         this._utasadatok
-            .filter(utas => utas.lejár3Nap)
+            .filter(utas => !utas.lejár3Nap)
             .forEach(utas => {
-                ki.push(`${utas.kártyaID} ${utas.idő}`);
+                ki.push(`${utas.kártyaID} ${moment((utas as FelszállásBérlet).érvényes).format("yyyy-MM-DD")}`);
             });
-        fs.writeFileSync(állomány, ki.join("\r"));
+        fs.writeFileSync(állomány, ki.join("\r\n") + "\r\n");
     }
 
     constructor(forrás: string) {

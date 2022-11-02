@@ -23,10 +23,12 @@
     "author": "Nits László",
     "license": "MIT",
     "dependencies": {
+        "moment": "^2.29.4",
         "tslib": "^2.4.0"
     },
     "devDependencies": {
         "@types/jest": "^28.1.8",
+        "@types/moment": "^2.13.0",
         "@types/node": "^18.8.4",
         "@typescript-eslint/eslint-plugin": "^5.36.1",
         "@typescript-eslint/parser": "^5.40.0",

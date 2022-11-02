@@ -5,6 +5,10 @@ export default class FelszállásBérlet extends Felszállás {
     private _típus: string;
     private _érvényes: Date;
 
+    public get érvényes(): Date {
+        return this._érvényes;
+    }
+
     public get érvényesFelszállás(): boolean {
         const érvényességLejár: number = this._érvényes.valueOf() + 24 * 60 * 60 * 1000;
         return this._idő.valueOf() < érvényességLejár;
@@ -19,7 +23,7 @@ export default class FelszállásBérlet extends Felszállás {
     }
 
     public get lejár3Nap(): boolean {
-        return this.érvényesFelszállás && Segéd.napokszama(this._idő.getFullYear(), this._idő.getMonth(), this._idő.getDate(), this._érvényes.getFullYear(), this._érvényes.getMonth(), this._érvényes.getDate()) <= 3;
+        return this.érvényesFelszállás && Segéd.napokszama(this._idő.getFullYear(), this._idő.getMonth(), this._idő.getDay(), this._érvényes.getFullYear(), this._érvényes.getMonth(), this._érvényes.getDate()) <= 3;
     }
 
     constructor(sor: string) {
