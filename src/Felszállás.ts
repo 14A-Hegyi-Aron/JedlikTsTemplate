@@ -1,3 +1,5 @@
+import Segéd from "./segéd";
+
 export default abstract class Felszállás {
     protected _megállSorszáma: number;
     protected _idő: Date;

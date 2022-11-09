@@ -62,11 +62,10 @@ export default class Megoldás {
 
     public figyelmeztetéseketÁllománybaÍr(állomány: string): void {
         const ki: string[] = [];
-        this._utasadatok
-            .filter(utas => !utas.lejár3Nap)
-            .forEach(utas => {
-                ki.push(`${utas.kártyaID} ${moment((utas as FelszállásBérlet).érvényes).format("yyyy-MM-DD")}`);
-            });
+        const lejár: Felszállás[] = this._utasadatok.filter(utas => utas.lejár3Nap);
+        lejár.forEach(e => {
+            ki.push(`${e.kártyaID} ${moment((e as FelszállásBérlet).érvényes).format("YYYY-MM-DD")}`);
+        });
         fs.writeFileSync(állomány, ki.join("\r\n") + "\r\n");
     }
 
