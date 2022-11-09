@@ -1,6 +1,9 @@
 #  VS Code + TypeScript + Node.js + Jest + GitHub + Heroku
-badge:
-[![Badge](https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/@types/jest?color=%2315c213&label=jest&style=for-the-badge)](https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/@types/jest?color=%2315c213&label=jest&style=for-the-badge)
+
+[(https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/@types/jest?color=%2315c213&label=jest&style=for-the-badge)](https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/@types/jest?color=%2315c213&label=jest&style=for-the-badge)
+[(https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/@types/node?color=%23026e00&label=node&style=for-the-badge)](https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/@types/node?color=%23026e00&label=node&style=for-the-badge)
+
+
 
 ## Cyclic teszt:
 https://jedlik-ts-template.cyclic.app/

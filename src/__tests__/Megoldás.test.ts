@@ -24,4 +24,12 @@ describe("Megoldás osztály unit tesztek", () => {
         expect(instance.MaxKeresMap.maxFelszálló).toBe(39);
         expect(instance.MaxKeresMap.maxElsőMegálló).toBe(8);
     });
+
+    it("Ingyenes utazók száma", () => {
+        expect(instance.ingyenesUtazásokSzáma).toBe(133);
+    });
+
+    it("Kedvezményesen utazók száma", () => {
+        expect(instance.kedvezményesUtazásokSzáma).toBe(200);
+    });
 });
