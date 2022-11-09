@@ -1,4 +1,5 @@
 import Megoldás from "../megoldás";
+import fs from "fs";
 
 describe("Megoldás osztály unit tesztek", () => {
     const instance: Megoldás = new Megoldás("utasadat.txt");
@@ -25,11 +26,15 @@ describe("Megoldás osztály unit tesztek", () => {
         expect(instance.MaxKeresMap.maxElsőMegálló).toBe(8);
     });
 
-    it("Ingyenes utazók száma", () => {
+    it("Ingyenes utazók száma", async () => {
         expect(instance.ingyenesUtazásokSzáma).toBe(133);
     });
 
-    it("Kedvezményesen utazók száma", () => {
+    it("Kedvezményesen utazók száma", async () => {
         expect(instance.kedvezményesUtazásokSzáma).toBe(200);
+    });
+
+    it("Állományok összehasonlítása", async () => {
+        expect(fs.readFileSync("figyelmeztetes.txt").toString()).toBe(fs.readFileSync("figyelmeztetesOH.txt").toString());
     });
 });
