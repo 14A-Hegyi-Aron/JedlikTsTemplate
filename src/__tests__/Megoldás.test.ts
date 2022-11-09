@@ -35,6 +35,7 @@ describe("Megoldás osztály unit tesztek", () => {
     });
 
     it("Állományok összehasonlítása", async () => {
+        await instance.figyelmeztetéseketÁllománybaÍr("figyelmeztetes.txt");
         expect(fs.readFileSync("figyelmeztetes.txt").toString()).toBe(fs.readFileSync("figyelmeztetesOH.txt").toString());
     });
 });

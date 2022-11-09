@@ -8,6 +8,15 @@ describe("FelszállásBérlet class unit test", () => {
     const fb5: FelszállásBérlet = new FelszállásBérlet("28 20190326-0735 8429649 GYK 20210101");
     const fb6: FelszállásBérlet = new FelszállásBérlet("25 20190326-0731 2048789 NYP 20190309");
 
+    it("Érvényes jellemző elleőrzése", () => {
+        expect(fb1.érvényes).toBe(true);
+        expect(fb2.érvényes).toBe(true);
+        expect(fb3.érvényes).toBe(false);
+        expect(fb4.érvényes).toBe(false);
+        expect(fb5.érvényes).toBe(true);
+        expect(fb6.érvényes).toBe(false);
+    });
+
     it("FelszállásBérlet constructor test", async () => {
         expect(fb1).toBeInstanceOf(FelszállásBérlet);
         expect(fb2).toBeInstanceOf(FelszállásBérlet);
