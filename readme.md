@@ -1,4 +1,4 @@
-#  VS Code + TypeScript + Node.js + Jest + GitHub + Heroku
+#  VS Code + TypeScript + Node.js + Jest
 
 [![Badge](https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/typescript?color=%233178C6&label=typescript&style=for-the-badge)](https://www.typescriptlang.org/)
 [![Badge](https://img.shields.io/github/package-json/dependency-version/14A-Hegyi-Aron/JedlikTsTemplate/dev/@types/jest?color=%2315c213&label=jest&style=for-the-badge)](https://jestjs.io/)
